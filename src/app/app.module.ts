@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatGridListModule, MatListModule, MatTableModule, MatFormFieldModule, MatInputModule ,MatTabsModule, MatButtonModule, MatIconModule} from '@angular/material';
+import { MatGridListModule, MatListModule, MatTableModule, MatFormFieldModule, MatInputModule ,MatTabsModule, MatButtonModule, MatIconModule, MatButtonToggleModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditableComponent } from './editable/editable.component';
 import { ViewModeDirective } from './editable/view-mode.directive';
@@ -19,7 +19,8 @@ import { ConfigComponent } from './components/config/config.component';
 import { ImpactComponent } from './components/impact/impact.component';
 import { TargetComponent } from './components/target/target.component';
 import { TargetCalcComponent } from './components/targetcalc/targetcalc.component'
-import { TargetDetailComponent } from './components/targetdetail/targetdetail.component'
+import { TargetDetailComponent } from './components/targetdetail/targetdetail.component';
+import { StateService } from './services/state.service'
 
 
 @NgModule({
@@ -43,10 +44,10 @@ import { TargetDetailComponent } from './components/targetdetail/targetdetail.co
     BrowserAnimationsModule,
     MatGridListModule,
     MatListModule,
-    MatTableModule, MatFormFieldModule, MatInputModule,MatTabsModule,MatButtonModule,MatIconModule,
+    MatTableModule, MatFormFieldModule, MatInputModule,MatTabsModule,MatButtonModule,MatIconModule,MatButtonToggleModule,
     FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

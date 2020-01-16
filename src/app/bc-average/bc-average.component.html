@@ -5,13 +5,36 @@
 		</td>
 	</tr>
 	<tr>
+		<td><div style="width: 700px; text-align:center; padding-bottom:5px; font-weight: bold;">Suggested Bid Price Pricing Filter</div>
+			<mat-button-toggle-group #group="matButtonToggleGroup" name="slice" aria-label="Selected Slices" multiple
+				[(value)]="selectedValue">
+				<mat-button-toggle value="master" (change)="selectionChanged($event)" style="width:100px;">Master
+				</mat-button-toggle>
+				<mat-button-toggle value="bsd" (change)="selectionChanged($event)" style="width:100px;">BSD
+				</mat-button-toggle>
+				<mat-button-toggle value="previously" (change)="selectionChanged($event)" style="width:100px;">PABP
+				</mat-button-toggle>
+				<mat-button-toggle value="country" (change)="selectionChanged($event)" style="width:100px;">Country
+				</mat-button-toggle>
+				<mat-button-toggle value="geo" (change)="selectionChanged($event)" style="width:100px;">GEO
+				</mat-button-toggle>
+				<mat-button-toggle value="competitor" (change)="selectionChanged($event)" style="width:100px;">
+					Competitor</mat-button-toggle>
+				<mat-button-toggle value="director" (change)="selectionChanged($event)" style="width:100px;">Director
+				</mat-button-toggle>
+			</mat-button-toggle-group>
+		</td>
+	</tr>
+	<tr>
 		<td>
 			<mat-tab-group>
 				<mat-tab label="Average Consumption">
-					<br><app-config></app-config>
+					<br>
+					<app-config></app-config>
 				</mat-tab>
 				<mat-tab label="Target Pricing">
-					<br><app-target></app-target>
+					<br>
+					<app-target></app-target>
 				</mat-tab>
 			</mat-tab-group>
 

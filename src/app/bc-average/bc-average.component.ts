@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StateService} from '../services/state.service';
 
 @Component({
   selector: 'app-bc-average',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BcAverageComponent implements OnInit {
 
-  constructor() { }
+  selectedValue : String[] = ["country", "geo", "competitor", "director"];
+  constructor(private state: StateService) { }
 
   ngOnInit() {
-    
+    this.selectedValue.forEach(i => this.state[i] = !this.state[i]);
   }
 
+  selectionChanged(item) {
+    this.state[item.value] = !this.state[item.value];
+  }
 }

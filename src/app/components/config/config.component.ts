@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import {StateService} from '../../services/state.service';
 
 @Component({
   selector: "app-config",
@@ -6,11 +7,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./config.component.css"]
 })
 export class ConfigComponent implements OnInit {
-  isShow = true;
-  constructor() {}
+
+  constructor(private state: StateService) {}
 
   ngOnInit() {}
-  toggleDisplay() {
-    this.isShow = !this.isShow;
-  }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import {StateService} from '../../services/state.service';
 
 @Component({
   selector: "app-target",
@@ -6,11 +7,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./target.component.css"]
 })
 export class TargetComponent implements OnInit {
-  isShow = true;
-  constructor() {}
+  constructor(private state: StateService) {}
 
   ngOnInit() {}
-  toggleDisplay() {
-    this.isShow = !this.isShow;
-  }
+
 }
