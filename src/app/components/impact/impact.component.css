@@ -1,0 +1,14 @@
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+td {
+  border: 1px black solid;
+  min-width: 50px;
+}
+.beige{
+  background-color: #DDD9C4;
+}
+.number{
+  text-align: right;
+}

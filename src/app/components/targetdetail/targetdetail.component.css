@@ -1,0 +1,22 @@
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+td {
+  border: 1px black solid;
+  min-width: 50px;
+}
+.nowrap {
+    white-space: nowrap;
+  overflow: hidden;
+}
+.grey-small{
+  background-color:#C0C0C0;
+  font-size: 8pt;
+}
+.grey{
+  background-color:#C0C0C0;
+}
+.number{
+  text-align: right;
+}

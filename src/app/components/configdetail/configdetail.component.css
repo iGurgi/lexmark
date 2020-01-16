@@ -1,0 +1,67 @@
+table {
+  width: 100%;
+}
+.table-row {
+  height: 30px !important;
+}
+.mat-cell {
+  border-right: 1px solid grey;
+  align-self: stretch;
+  padding-left: 5px;
+  padding-right: 3px;
+ 
+ }
+.mat-header-cell {
+  border-right: 1px solid darkgrey;
+  background-color: grey;
+  color: white;
+  align-self: stretch;
+  white-space: nowrap;
+  padding-left: 5px;
+ padding-right: 3px;
+}
+
+
+.mat-column-spacer{
+  width: 20px;
+}
+
+.mat-column-name.mat-cell{
+  border-right: 1px solid grey;
+  width: 250px !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mat-column-quantity.mat-cell{
+  border-right: 1px solid grey;
+  background-color: lightyellow;
+  color: blue;
+}
+.mat-column-geo.mat-cell{
+  border-right: 1px solid grey;
+  background-color: lightyellow;
+  color: blue;
+  text-align: right;
+  }
+.mat-column-competitor.mat-cell{
+  border-right: 1px solid grey;
+  background-color: lightyellow;
+  color: blue;
+  text-align: right;
+  }
+.mat-column-director.mat-cell{
+  border-right: 1px solid grey;
+  background-color: lightyellow;
+  color: blue;
+    text-align: right;
+}
+
+/*---- Remove default browser behaviour after selecting cells ----*/
+.selected, .unselected {
+  -webkit-user-select: none; /* Webkit  */
+  -moz-user-select:    none; /* Firefox */
+  -ms-user-select:     none; /* IE 10   */
+  -o-user-select:      none; /* Opera   */
+  user-select:         none;
+}
