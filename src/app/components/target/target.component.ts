@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-target',
-  templateUrl: './target.component.html',
-  styleUrls: ['./target.component.css']
+  selector: "app-target",
+  templateUrl: "./target.component.html",
+  styleUrls: ["./target.component.css"]
 })
 export class TargetComponent implements OnInit {
+  isShow = true;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  toggleDisplay() {
+    this.isShow = !this.isShow;
   }
-
 }

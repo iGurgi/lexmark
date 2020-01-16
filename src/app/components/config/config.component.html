@@ -1,34 +1,53 @@
 <table>
 	<tr>
-		<td>
+		<td class="align-top">
 			<div style="width: 100%; height: 21px;"> </div>
 			<app-configdetail rate="1.233"></app-configdetail>
 		</td>
-    		<td>
-			<div
-				style="width: 100%; height: 21px; text-align: center; background-color: #CCCCFF; border: 1px black solid;">
-				Previously - USD</div>
-			<app-configcalc rate="1.233"></app-configcalc>
+		<td style="vertical-align: top; border: 1px black solid;">
+			<table>
+				<tr>
+          <td style="vertical-align: top;"><a (click)=toggleDisplay()><button mat-icon-button aria-label="Example icon-button with a heart icon"><mat-icon  *ngIf="isShow">add</mat-icon><mat-icon  *ngIf="!isShow">remove</mat-icon></button></a></td>
+					<td *ngIf="!isShow">
+						<div
+							style="width: 100%; height: 21px; text-align: center; background-color: #FDE9D9; border: 1px black solid;">
+							Master Price - USD</div>
+						<app-configcalc rate="1.233"></app-configcalc>
+					</td>
+					<td *ngIf="!isShow">
+						<div
+							style="width: 100%; height: 21px; text-align: center; background-color: #B7DEE8; border: 1px black solid;">
+							BSD - USD</div>
+						<app-configcalc rate="1.233"></app-configcalc>
+					</td>
+					<td *ngIf="!isShow">
+						<div
+							style="width: 100%; height: 21px; text-align: center; background-color: #CCCCFF; border: 1px black solid;">
+							Previously - USD</div>
+						<app-configcalc rate="1.233"></app-configcalc>
+					</td>
+				</tr>
+			</table>
 		</td>
-		<td>
+		<td class="align-top">
 			<div
 				style="width: 100%; height: 21px; text-align: center; background-color: #FFFFFF; border: 1px black solid;">
 				Country - USD </div>
 			<app-configcalc rate="1.233"></app-configcalc>
 		</td>
-		<td>
+		<td class="align-top">
 			<div
 				style="width: 100%; height: 21px; text-align: center; background-color: #80FF80; border: 1px black solid;">
 				GEO - USD </div>
 			<app-configcalc rate="1.233"></app-configcalc>
 		</td>
-		<td>
+		<td class="align-top">
 			<div
 				style="width: 100%; height: 21px; text-align: center; background-color: #FFFF00; border: 1px black solid;">
 				Competitor - USD </div>
 			<app-configcalc rate="1.233"></app-configcalc>
 		</td>
-		<td>
+		<td class="align-top">
 			<div
 				style="width: 100%; height: 21px; text-align: center; background-color: #FCD5B4; border: 1px black solid;">
 				Director - USD </div>

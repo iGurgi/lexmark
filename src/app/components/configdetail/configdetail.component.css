@@ -1,10 +1,10 @@
 table {
   width: 100%;
 }
-.table-row {
+.table-row, .mat-footer-row {
   height: 30px !important;
 }
-.mat-cell {
+.mat-cell, .mat-footer-cell {
   border-right: 1px solid grey;
   align-self: stretch;
   padding-left: 5px;
@@ -15,6 +15,7 @@ table {
   border-right: 1px solid darkgrey;
   background-color: grey;
   color: white;
+  text-align: center;
   align-self: stretch;
   white-space: nowrap;
   padding-left: 5px;
@@ -31,6 +32,9 @@ table {
   width: 250px !important;
   white-space: nowrap;
   overflow: hidden;
+}
+.mat-column-quanitity{
+ width:50px;
 }
 
 .mat-column-quantity.mat-cell{
@@ -55,6 +59,10 @@ table {
   background-color: lightyellow;
   color: blue;
     text-align: right;
+}
+
+.number {
+  text-align: right;
 }
 
 /*---- Remove default browser behaviour after selecting cells ----*/

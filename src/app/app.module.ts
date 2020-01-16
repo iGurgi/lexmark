@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatGridListModule, MatListModule, MatTableModule, MatFormFieldModule, MatInputModule ,MatTabsModule } from '@angular/material';
+import { MatGridListModule, MatListModule, MatTableModule, MatFormFieldModule, MatInputModule ,MatTabsModule, MatButtonModule, MatIconModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditableComponent } from './editable/editable.component';
 import { ViewModeDirective } from './editable/view-mode.directive';
@@ -43,7 +43,7 @@ import { TargetDetailComponent } from './components/targetdetail/targetdetail.co
     BrowserAnimationsModule,
     MatGridListModule,
     MatListModule,
-    MatTableModule, MatFormFieldModule, MatInputModule,MatTabsModule,
+    MatTableModule, MatFormFieldModule, MatInputModule,MatTabsModule,MatButtonModule,MatIconModule,
     FormsModule, ReactiveFormsModule
   ],
   providers: [],

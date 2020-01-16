@@ -1,19 +1,25 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
 	<ng-container matColumnDef="configid">
-		<th mat-header-cell *matHeaderCellDef>  </th>
-		<td mat-cell *matCellDef="let config;let index = index"> {{index == 0 ? config.configId : config.materialLine}} </td>
+		<th mat-header-cell *matHeaderCellDef> </th>
+		<td mat-cell *matCellDef="let config;let index = index"> {{index == 0 ? config.configId : config.materialLine}}
+		</td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 	<ng-container matColumnDef="name">
-		<th mat-header-cell *matHeaderCellDef>  </th>
-		<td mat-cell *matCellDef="let config"> <div style="width:150px;" title="{{config.name}}">{{config.name}}</div> </td>
+		<th mat-header-cell *matHeaderCellDef> </th>
+		<td mat-cell *matCellDef="let config">
+			<div style="width:150px;" title="{{config.name}}">{{config.name}}</div>
+		</td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 	<ng-container matColumnDef="partnumber">
 		<th mat-header-cell *matHeaderCellDef> Part Number </th>
 		<td mat-cell *matCellDef="let config"> {{config.partNumber}} </td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 	<ng-container matColumnDef="quantity">
 		<th mat-header-cell *matHeaderCellDef> Units </th>
-		<td mat-cell *matCellDef="let config;let index = index">
+		<td mat-cell *matCellDef="let config;let index = index" class="number">
 			<editable (update)="updateField(index, 'quantity')">
 				<ng-template viewMode>
 					{{config.quantity}}
@@ -29,38 +35,36 @@
 				</ng-template>
 			</editable>
 		</td>
+		<td mat-footer-cell *matFooterCellDef style="font-size:9pt;min-width: 65px;"> CPP Mono </td>
 	</ng-container>
 	<ng-container matColumnDef="flod">
 		<th mat-header-cell *matHeaderCellDef> Flod </th>
-		<td mat-cell *matCellDef="let config"> {{config.flod}} </td>
+		<td mat-cell *matCellDef="let config" class="number">{{config.flod}}</td>
+		<td mat-footer-cell *matFooterCellDef class="number">0.0136</td>
 	</ng-container>
 	<ng-container matColumnDef="master">
 		<th mat-header-cell *matHeaderCellDef> Master </th>
 		<td mat-cell *matCellDef="let config"> {{config.master}} </td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 	<ng-container matColumnDef="BSD">
 		<th mat-header-cell *matHeaderCellDef> Offer </th>
 		<td mat-cell *matCellDef="let config"> {{config.offer}} </td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 	<ng-container matColumnDef="pabp">
 		<th mat-header-cell *matHeaderCellDef> Pabp </th>
-		<td mat-cell *matCellDef="let config"> {{config.pabp}} </td>
-	</ng-container>
-	<ng-container matColumnDef="netbidprice">
-		<th mat-header-cell *matHeaderCellDef> Net Bid Price </th>
-		<td mat-cell *matCellDef="let config"> {{config.netbidprice}} </td>
-	</ng-container>
-	<ng-container matColumnDef="matline">
-		<th mat-header-cell *matHeaderCellDef> Material Line </th>
-		<td mat-cell *matCellDef="let config"> {{getMaterialLine(config.type)}} </td>
+		<td mat-cell *matCellDef="let config" class="number"> {{config.pabp}} </td>
+		<td mat-footer-cell *matFooterCellDef class="number">0.0045</td>
 	</ng-container>
 	<ng-container matColumnDef="cntry">
 		<th mat-header-cell *matHeaderCellDef> Ctry </th>
-		<td mat-cell *matCellDef="let config"> {{config.country}} </td>
+		<td mat-cell *matCellDef="let config" class="number"> {{config.country}} </td>
+		<td mat-footer-cell *matFooterCellDef class="number">0.0043</td>
 	</ng-container>
 	<ng-container matColumnDef="geo">
 		<th mat-header-cell *matHeaderCellDef> GEO </th>
-		<td mat-cell *matCellDef="let config;let index = index">
+		<td mat-cell *matCellDef="let config;let index = index" class="number">
 			<editable (update)="updateField(index, 'geo')">
 				<ng-template viewMode>
 					{{config.geo}}
@@ -75,10 +79,12 @@
 					<!-- <input  [formControl]="getControl(index, 'name')" focusable editableOnEnter> -->
 				</ng-template>
 			</editable>
-		</td>	</ng-container>
+		</td>
+		<td mat-footer-cell *matFooterCellDef class="number">0.0045</td>
+	</ng-container>
 	<ng-container matColumnDef="competitor">
 		<th mat-header-cell *matHeaderCellDef> COMPET </th>
-		<td mat-cell *matCellDef="let config;let index = index">
+		<td mat-cell *matCellDef="let config;let index = index" class="number">
 			<editable (update)="updateField(index, 'competitor')">
 				<ng-template viewMode>
 					{{config.competitor}}
@@ -94,10 +100,11 @@
 				</ng-template>
 			</editable>
 		</td>
+		<td mat-footer-cell *matFooterCellDef class="number">0.0045</td>
 	</ng-container>
 	<ng-container matColumnDef="director">
 		<th mat-header-cell *matHeaderCellDef> DIR </th>
-	<td mat-cell *matCellDef="let config;let index = index">
+		<td mat-cell *matCellDef="let config;let index = index" class="number">
 			<editable (update)="updateField(index, 'director')">
 				<ng-template viewMode>
 					{{config.director}}
@@ -113,36 +120,28 @@
 				</ng-template>
 			</editable>
 		</td>
+		<td mat-footer-cell *matFooterCellDef class="number">0.0043</td>
 	</ng-container>
 	<ng-container matColumnDef="ctryvspabp">
 		<th mat-header-cell *matHeaderCellDef> Ctry vs PABP</th>
-		<td mat-cell *matCellDef="let config"> {{getVsPct(config.country, config.pabp).toFixed(0)}}% </td>
+		<td mat-cell *matCellDef="let config" class="number"> {{getVsPct(config.country, config.pabp).toFixed(0)}}%
+		</td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 	<ng-container matColumnDef="dirvpabp">
 		<th mat-header-cell *matHeaderCellDef> Dir vs PABP</th>
-		<td mat-cell *matCellDef="let config"> {{getVsPct(config.director, config.pabp).toFixed(0)}}% </td>
+		<td mat-cell *matCellDef="let config" class="number"> {{getVsPct(config.director, config.pabp).toFixed(0)}}%
+		</td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 	<ng-container matColumnDef="dirvctry">
 		<th mat-header-cell *matHeaderCellDef> Dir vs Ctry</th>
-		<td mat-cell *matCellDef="let config"> {{getVsPct(config.director, config.country).toFixed(0)}}% </td>
-	</ng-container>
-  	<ng-container matColumnDef="vsflod">
-		<th mat-header-cell *matHeaderCellDef> Vs FLOD</th>
-		<td mat-cell *matCellDef="let config"> {{((config.country - config.flod)/config.flod*100).toFixed(0)}}% </td>
-	</ng-container>
-	<ng-container matColumnDef="aur">
-		<th mat-header-cell *matHeaderCellDef> AUR</th>
-		<td mat-cell *matCellDef="let config"> {{getAur(config).toFixed(2)}} </td>
-	</ng-container>
-	<ng-container matColumnDef="gppct">
-		<th mat-header-cell *matHeaderCellDef> GP %</th>
-		<td mat-cell *matCellDef="let config"> {{getGP(config).toFixed(0)}}% </td>
-	</ng-container>
-	<ng-container matColumnDef="spacer">
-		<th mat-header-cell *matHeaderCellDef> </th>
-		<td mat-cell *matCellDef="let config"> </td>
+		<td mat-cell *matCellDef="let config" class="number"> {{getVsPct(config.director, config.country).toFixed(0)}}%
+		</td>
+		<td mat-footer-cell *matFooterCellDef> </td>
 	</ng-container>
 
 	<tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
 	<tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
+	<tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
 </table>
