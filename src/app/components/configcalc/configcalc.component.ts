@@ -11,6 +11,7 @@ export class ConfigCalcComponent implements OnInit {
   displayedColumns: string[] = ["vsflod", "aur", "gppct"];
   dataSource = this.core.list$;
   @Input() rate: number;
+  @Input() calclevel: string = "country";
   constructor(private core: ConfigService) {}
 
   ngOnInit() {}
