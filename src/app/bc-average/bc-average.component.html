@@ -5,7 +5,9 @@
 		</td>
 	</tr>
 	<tr>
-		<td><div style="width: 700px; text-align:center; padding-bottom:5px; font-weight: bold;">Suggested Bid Price Pricing Filter</div>
+		<td>
+			<div style="width: 700px; text-align:center; padding-bottom:5px; font-weight: bold;">Suggested Bid Price
+				Pricing Filter</div>
 			<mat-button-toggle-group #group="matButtonToggleGroup" name="slice" aria-label="Selected Slices" multiple
 				[(value)]="selectedValue">
 				<mat-button-toggle value="master" (change)="selectionChanged($event)" style="width:100px;">Master
@@ -35,6 +37,10 @@
 				<mat-tab label="Target Pricing">
 					<br>
 					<app-target></app-target>
+				</mat-tab>
+				<mat-tab label="Release Notes">
+					<br>
+					<app-releasenotes></app-releasenotes>
 				</mat-tab>
 			</mat-tab-group>
 

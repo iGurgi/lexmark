@@ -1,0 +1,9 @@
+table {
+  width: 100%;
+    border-spacing: 0px;
+  border-collapse: collapse;
+}
+td {
+  text-align:center;
+  min-width:55px;
+}

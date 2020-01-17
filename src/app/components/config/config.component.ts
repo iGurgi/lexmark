@@ -7,9 +7,11 @@ import {StateService} from '../../services/state.service';
   styleUrls: ["./config.component.css"]
 })
 export class ConfigComponent implements OnInit {
-
+isShow = true;
   constructor(private state: StateService) {}
 
   ngOnInit() {}
-
+toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
 }

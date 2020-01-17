@@ -14,6 +14,7 @@ import { LineItem } from "../models/linteitem";
   templateUrl: './configdetail.component.html',
   styleUrls: ['./configdetail.component.css']
 })
+
 export class ConfigDetailComponent implements OnInit {
   displayedColumns: string[] = [
     "configid",

@@ -20,7 +20,9 @@ import { ImpactComponent } from './components/impact/impact.component';
 import { TargetComponent } from './components/target/target.component';
 import { TargetCalcComponent } from './components/targetcalc/targetcalc.component'
 import { TargetDetailComponent } from './components/targetdetail/targetdetail.component';
-import { StateService } from './services/state.service'
+import { StateService } from './services/state.service';
+import { ReleasenotesComponent } from './components/releasenotes/releasenotes.component';
+import { ConfigcalcheaderComponent } from './components/configcalcheader/configcalcheader.component'
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { StateService } from './services/state.service'
     ImpactComponent,
     TargetComponent,
     TargetDetailComponent,
-    TargetCalcComponent
+    TargetCalcComponent,
+    ReleasenotesComponent,
+    ConfigcalcheaderComponent
   ],
   imports: [
     BrowserModule,
