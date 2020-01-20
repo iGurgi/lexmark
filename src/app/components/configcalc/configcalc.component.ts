@@ -24,15 +24,15 @@ export class ConfigCalcComponent implements OnInit {
     let result: number;
     switch (item.materialLine) {
       case "HW": {
-        result = (item.country / (1 / 1.17)) * (1 - 0.03);
+        result = (item[this.calclevel] / (1 / 1.17)) * (1 - 0.03);
         break;
       }
       case "SU": {
-        result = (item.country / (1 / 1.17)) * (1 - 0);
+        result = (item[this.calclevel] / (1 / 1.17)) * (1 - 0);
         break;
       }
       case "XW": {
-        result = (item.country / (1 / 1.17)) * (1 - 0);
+        result = (item[this.calclevel] / (1 / 1.17)) * (1 - 0);
         break;
       }
       default: {
