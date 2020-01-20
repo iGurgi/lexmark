@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Header} from '../../models/header'
+import {CoreService} from "../../services/core.service"
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,10 @@ import {Header} from '../../models/header'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() headerSource: Header;
-  constructor() { }
+  constructor(private core: CoreService) { }
 
   ngOnInit() {
+    
   }
 
 }

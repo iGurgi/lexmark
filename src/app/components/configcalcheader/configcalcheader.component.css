@@ -6,4 +6,24 @@ table {
 td {
   text-align:center;
   min-width:55px;
+  border: 1px solid black;
+}
+
+.geo {
+  background-color: #80FF80;
+}
+.competitor {
+  background-color: #FFFF00;
+}
+.director {
+  background-color: #FCD5B4;
+}
+.master {
+  background-color: #FDE9D9;
+}
+.bsd {
+  background-color: #B7DEE8;
+}
+.previously {
+  background-color: #CCCCFF;
 }

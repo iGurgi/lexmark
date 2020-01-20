@@ -8,11 +8,11 @@ import {StateService} from '../services/state.service';
 })
 export class BcAverageComponent implements OnInit {
 
-  selectedValue : String[] = ["country", "geo", "competitor", "director"];
+  pricingFilter : String[] = ["country", "geo", "competitor", "director"];
   constructor(private state: StateService) { }
 
   ngOnInit() {
-    this.selectedValue.forEach(i => this.state[i] = !this.state[i]);
+    this.pricingFilter.forEach(i => this.state[i] = !this.state[i]);
   }
 
   selectionChanged(item) {

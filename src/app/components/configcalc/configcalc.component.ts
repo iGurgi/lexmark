@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ConfigService } from "../../services/config.service";
+import { CoreService } from "../../services/core.service";
 import { LineItem } from "../models/linteitem";
 
 @Component({
@@ -9,10 +10,10 @@ import { LineItem } from "../models/linteitem";
 })
 export class ConfigCalcComponent implements OnInit {
   displayedColumns: string[] = ["vsflod", "aur", "gppct"];
-  dataSource = this.core.list$;
+  dataSource = this.config.list$;
   @Input() rate: number;
   @Input() calclevel: string = "country";
-  constructor(private core: ConfigService) {}
+  constructor(private config: ConfigService, private core: CoreService) {}
 
   ngOnInit() {}
 
@@ -24,15 +25,15 @@ export class ConfigCalcComponent implements OnInit {
     let result: number;
     switch (item.materialLine) {
       case "HW": {
-        result = (item.country / (1 / 1.17)) * (1 - 0.03);
+        result = (item[this.calclevel] / (this.core.$header.outlookRateHW)) * (1 - 0.03);
         break;
       }
       case "SU": {
-        result = (item.country / (1 / 1.17)) * (1 - 0);
+        result = (item[this.calclevel] / (this.core.$header.outlookRateSU)) * (1 - 0);
         break;
       }
       case "XW": {
-        result = (item.country / (1 / 1.17)) * (1 - 0);
+        result = (item[this.calclevel] / (this.core.$header.outlookRateHW)) * (1 - 0);
         break;
       }
       default: {
@@ -40,12 +41,12 @@ export class ConfigCalcComponent implements OnInit {
         break;
       }
     }
-    return result;
+    return isNaN(result) ? 0 : result;
   }
 
   getGP(item: LineItem): number {
     return (
-      ((this.getAur(item) - this.getDDCost(item)) / this.getAur(item)) * 100
+      this.getAur(item) > 0 ? ((this.getAur(item) - this.getDDCost(item)) / this.getAur(item)) * 100 : 0
     );
   }
 }
