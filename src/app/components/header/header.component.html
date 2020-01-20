@@ -1,28 +1,97 @@
-<div style="max-width:1000px;"><mat-grid-list cols="4" rowHeight="3em" >
-	<mat-grid-tile>
-		<b>Justiz NRW 2018</b>
-	</mat-grid-tile>
-	<mat-grid-tile>
-		Country: Germany
-	</mat-grid-tile>
-	<mat-grid-tile>
-		Outlook HW
-		<br />
-    0.8547
-	</mat-grid-tile>
-		<mat-grid-tile>
-			Outlook SU
-			<br />
-    0.8547
-	</mat-grid-tile>
-  <mat-grid-tile>
-		2019-4-1 to 2026-3-31 / 6 years, 11 months, 30 days
-	</mat-grid-tile>
-	<mat-grid-tile>
-		<b>Quote # 2018-369718</b>
-	</mat-grid-tile>
-	<mat-grid-tile colspan="2">
-		DD Rate: 0.8110
-	</mat-grid-tile>
-</mat-grid-list>
-</div>
+<table>
+	<tr>
+		<td colspan="4" class="mat-title">
+			Quote Information
+			<mat-divider></mat-divider>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="mat-body-2" style="min-width:125px;">Quote Name:
+		</td>
+		<td style="min-width:200px;">Justiz NRW 2018
+		</td>
+		<td class="mat-body-2" style="min-width:125px;">Quote Description:
+		</td>
+		<td>New public tender of the former Lexmark customer justice nrw.
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Start Date:
+		</td>
+		<td>04/01/2019
+		</td>
+		<td class="mat-body-2">End Date:
+		</td>
+		<td>03/31/2026
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Quote Category:
+		</td>
+		<td>Special Bid Traditional
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+	<tr>
+		<td colspan="2" class="mat-title">Sales Information
+			<mat-divider></mat-divider>
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Sales Region:
+		</td>
+		<td>Germany
+		</td>
+    	<td class="mat-body-2" rowspan="7" colspan="2">
+			<mat-form-field appearance="outline">
+				<mat-label>Outlook Rate HW:</mat-label>
+				<input matInput [(ngModel)]="this.core.$header.outlookRateHW"/>
+      </mat-form-field><br />
+      <mat-form-field appearance="outline">
+				<mat-label>Outlook Rate SU:</mat-label>
+				<input matInput [(ngModel)]="this.core.$header.outlookRateSU"/>
+      </mat-form-field>
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Sales Org:
+		</td>
+		<td>1013
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Sales Office:
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Sales Group:
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Sales GEO:
+		</td>
+		<td>EMEA
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Quote Currency:
+		</td>
+		<td>EUR
+		</td>
+	</tr>
+	<tr>
+		<td class="mat-body-2">Exchange Rate:
+		</td>
+		<td>1.233
+		</td>
+	</tr>
+</table>

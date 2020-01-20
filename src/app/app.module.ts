@@ -23,7 +23,8 @@ import { TargetDetailComponent } from './components/targetdetail/targetdetail.co
 import { StateService } from './services/state.service';
 import { ReleasenotesComponent } from './components/releasenotes/releasenotes.component';
 import { ConfigcalcheaderComponent } from './components/configcalcheader/configcalcheader.component';
-import { TargetcalcheaderComponent } from './components/targetcalcheader/targetcalcheader.component'
+import { TargetcalcheaderComponent } from './components/targetcalcheader/targetcalcheader.component';
+import { CoreService } from './services/core.service'
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { TargetcalcheaderComponent } from './components/targetcalcheader/targetc
     MatTableModule, MatFormFieldModule, MatInputModule,MatTabsModule,MatButtonModule,MatIconModule,MatButtonToggleModule,
     FormsModule, ReactiveFormsModule
   ],
-  providers: [StateService],
+  providers: [StateService, CoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
