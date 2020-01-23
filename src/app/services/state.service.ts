@@ -9,6 +9,7 @@ export class StateService {
   $geo: boolean = false;
   $competitor: boolean = false;
   $director: boolean = false;
+  $impact: boolean = false;
 
   constructor() { }
 

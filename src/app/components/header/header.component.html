@@ -38,57 +38,60 @@
 	</tr>
 	<tr>
 	<tr>
-		<td colspan="2" class="mat-title">Sales Information
+		<td colspan="2" class="mat-title">Sales Information<a (click)=toggleDetail() title="Show Detail"
+				style="font-size: 12pt; color:blue; cursor: pointer;">
+				{{isShowDetail ? "less..." : "more..."}}
+			</a>
 			<mat-divider></mat-divider>
 		</td>
 	</tr>
-	<tr>
+	<tr *ngIf="isShowDetail">
 		<td class="mat-body-2">Sales Region:
 		</td>
 		<td>Germany
 		</td>
-    	<td class="mat-body-2" rowspan="7" colspan="2">
+		<td class="mat-body-2" rowspan="7" colspan="2">
 			<mat-form-field appearance="outline">
 				<mat-label>Outlook Rate HW:</mat-label>
 				<input matInput [(ngModel)]="this.core.$header.outlookRateHW"/>
       </mat-form-field><br />
-      <mat-form-field appearance="outline">
-				<mat-label>Outlook Rate SU:</mat-label>
-				<input matInput [(ngModel)]="this.core.$header.outlookRateSU"/>
+				<mat-form-field appearance="outline">
+					<mat-label>Outlook Rate SU:</mat-label>
+					<input matInput [(ngModel)]="this.core.$header.outlookRateSU"/>
       </mat-form-field>
 		</td>
 	</tr>
-	<tr>
+	<tr *ngIf="isShowDetail">
 		<td class="mat-body-2">Sales Org:
 		</td>
 		<td>1013
 		</td>
 	</tr>
-	<tr>
+	<tr *ngIf="isShowDetail">
 		<td class="mat-body-2">Sales Office:
 		</td>
 		<td>
 		</td>
 	</tr>
-	<tr>
+	<tr *ngIf="isShowDetail">
 		<td class="mat-body-2">Sales Group:
 		</td>
 		<td>
 		</td>
 	</tr>
-	<tr>
+	<tr *ngIf="isShowDetail">
 		<td class="mat-body-2">Sales GEO:
 		</td>
 		<td>EMEA
 		</td>
 	</tr>
-	<tr>
+	<tr *ngIf="isShowDetail">
 		<td class="mat-body-2">Quote Currency:
 		</td>
 		<td>EUR
 		</td>
 	</tr>
-	<tr>
+	<tr *ngIf="isShowDetail">
 		<td class="mat-body-2">Exchange Rate:
 		</td>
 		<td>1.233
