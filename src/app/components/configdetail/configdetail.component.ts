@@ -7,7 +7,7 @@ import {
 } from "@angular/core";
 import { FormControl, FormArray, FormGroup, Validators } from "@angular/forms";
 import { ConfigService } from "../../services/config.service";
-import { LineItem } from "../models/linteitem";
+import { ConfigLineItem } from "../businessobjects/configlineitem";
 
 @Component({
   selector: 'app-configdetail',

@@ -4,4 +4,5 @@ export interface Header {
   outlookRateHW: number;
   outlookRateSU: number;
   ddRate: number;
+  exchangeRate: number;
 }

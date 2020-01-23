@@ -8,7 +8,8 @@ export class CoreService {
     quoteNumber: "",
     outlookRateHW: 0.854700855,
     outlookRateSU: 0.854700855,
-    ddRate: 1.17
+    ddRate: 1.17,
+    exchangeRate: 1.233
   };
 
   constructor() {}
