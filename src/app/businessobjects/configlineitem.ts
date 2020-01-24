@@ -54,5 +54,4 @@ export class ConfigLineItem implements LineItem {
       this.getAur(calclevel) > 0 ? ((this.getAur(calclevel) - this.getDDCost()) / this.getAur(calclevel)) * 100 : 0
     );
   }
-
 }

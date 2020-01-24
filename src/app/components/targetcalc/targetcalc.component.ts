@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ConfigService } from "../../services/config.service";
+import { CoreService } from "../../services/core.service";
 
 @Component({
   selector: 'app-targetcalc',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./targetcalc.component.css']
 })
 export class TargetCalcComponent implements OnInit {
+  @Input() calclevel: string = "country";
 
-  constructor() { }
+  constructor(private config: ConfigService, private core: CoreService) { }
 
   ngOnInit() {
   }

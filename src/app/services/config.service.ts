@@ -76,4 +76,15 @@ export class ConfigService {
   }
 
   getControl(index, fieldName) {}
+
+  getRev(line: string, calclevel: string): number{
+    let toSum = this.list.filter(item => item.materialLine === line);
+    let sumQuantity: number = 0;
+
+    for (let i = 0; i < toSum.length; i++){
+      sumQuantity += toSum[i].quantity * Math.round(toSum[i].getAur(calclevel));
+    }
+
+    return sumQuantity/1000;
+  }
 }
