@@ -63,15 +63,16 @@ export class ConfigService {
   }
 
   update(index, field, value) {
-    this.list = this.list.map((e, i) => {
-      if (index === i) {
-        return {
-          ...e,
-          [field]: value
-        };
-      }
-      return e;
-    });
+    // this.list = this.list.map((e, i) => {
+    //   if (index === i) {
+    //     return {
+    //       ...e,
+    //       [field]: value
+    //     };
+    //   }
+    //   return e;
+    // });
+    this.list[index][field] = value;
     this.list$.next(this.list);
   }
 

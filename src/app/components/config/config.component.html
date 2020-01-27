@@ -3,31 +3,31 @@
 		<td class="align-top" style="vertical-align: top;" colspan="2">
 			<table style="vertical-align: top; border: 1px black solid;">
 				<tr>
-					<td style="vertical-align: center; cursor: pointer;" (click)=toggleDisplay()><button mat-icon-button aria-label="Example icon-button with a heart icon"><mat-icon *ngIf="!this.state.impact">add</mat-icon><mat-icon  *ngIf="this.state.impact">remove</mat-icon></button><mat-label>Show Impact</mat-label>
+					<td style="vertical-align: center; cursor: pointer;" (click)=toggleDisplay()><button mat-icon-button aria-label="Example icon-button with a heart icon"><mat-icon *ngIf="!this.state.$impact">add</mat-icon><mat-icon  *ngIf="this.state.$impact">remove</mat-icon></button><mat-label>Show Impact</mat-label>
 					</td>
 				</tr>
 			</table>
 		</td>
 		<td class="align-top" *ngIf="this.state.master">
-			<app-configcalcheader rate="1.233" calclevel="master"></app-configcalcheader>
+			<app-configcalcheader calclevel="master"></app-configcalcheader>
 		</td>
 		<td class="align-top" *ngIf="this.state.bsd">
-			<app-configcalcheader rate="1.233" calclevel="bsd"></app-configcalcheader>
+			<app-configcalcheader calclevel="bsd"></app-configcalcheader>
 		</td>
 		<td class="align-top" *ngIf="this.state.previously">
-			<app-configcalcheader rate="1.233" calclevel="previously"></app-configcalcheader>
+			<app-configcalcheader calclevel="previously"></app-configcalcheader>
 		</td>
 		<td class="align-top" *ngIf="this.state.country">
-			<app-configcalcheader rate="1.233" calclevel="country"></app-configcalcheader>
+			<app-configcalcheader calclevel="country"></app-configcalcheader>
 		</td>
 		<td class="align-top" *ngIf="this.state.geo">
-			<app-configcalcheader rate="1.233" calclevel="geo"></app-configcalcheader>
+			<app-configcalcheader calclevel="geo"></app-configcalcheader>
 		</td>
 		<td class="align-top" *ngIf="this.state.competitor">
-			<app-configcalcheader rate="1.233" calclevel="competitor"></app-configcalcheader>
+			<app-configcalcheader calclevel="competitor"></app-configcalcheader>
 		</td>
 		<td class="align-top" *ngIf="this.state.director">
-			<app-configcalcheader rate="1.233" calclevel="director"></app-configcalcheader>
+			<app-configcalcheader calclevel="director"></app-configcalcheader>
 		</td>
 	</tr>
 	<tr>
@@ -35,30 +35,30 @@
       
     </td>
 		<td class="align-top">
-			<app-configdetail rate="1.233"></app-configdetail>
+			<app-configdetail></app-configdetail>
       
-      <app-impact *ngIf="this.state.impact"></app-impact>
+      <app-impact *ngIf="this.state.$impact"></app-impact>
 		</td>
 		<td class="align-top" *ngIf="this.state.master">
-			<app-configcalc rate="1.233" calclevel="master"></app-configcalc>
+			<app-configcalc calclevel="master"></app-configcalc>
 		</td>
 		<td class="align-top" *ngIf="this.state.bsd">
-			<app-configcalc rate="1.233" calclevel="bsd"></app-configcalc>
+			<app-configcalc calclevel="bsd"></app-configcalc>
 		</td>
 		<td class="align-top" *ngIf="this.state.previously">
-			<app-configcalc rate="1.233" calclevel="previously"></app-configcalc>
+			<app-configcalc calclevel="previously"></app-configcalc>
 		</td>
 		<td class="align-top" *ngIf="this.state.country">
-			<app-configcalc rate="1.233" calclevel="country"></app-configcalc>
+			<app-configcalc calclevel="country"></app-configcalc>
 		</td>
 		<td class="align-top" *ngIf="this.state.geo">
-			<app-configcalc rate="1.233" calclevel="geo"></app-configcalc>
+			<app-configcalc calclevel="geo"></app-configcalc>
 		</td>
 		<td class="align-top" *ngIf="this.state.competitor">
-			<app-configcalc rate="1.233" calclevel="competitor"></app-configcalc>
+			<app-configcalc calclevel="competitor"></app-configcalc>
 		</td>
 		<td class="align-top" *ngIf="this.state.director">
-			<app-configcalc rate="1.233" calclevel="director"></app-configcalc>
+			<app-configcalc calclevel="director"></app-configcalc>
 		</td>
 	</tr>
 </table>

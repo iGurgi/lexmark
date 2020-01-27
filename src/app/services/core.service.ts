@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Header } from "../models/header";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class CoreService {
   $header: Header = {
     name: "Justiz NRW 2018",
