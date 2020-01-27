@@ -12,6 +12,6 @@ isShow = true;
 
   ngOnInit() {}
 toggleDisplay() {
-    this.isShow = !this.isShow;
+    this.state.$impact = !this.state.$impact;
   }
 }

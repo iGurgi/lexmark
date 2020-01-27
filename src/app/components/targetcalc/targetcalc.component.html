@@ -9,34 +9,34 @@
 	<tr>
 		<td class="grey">HW</td>
 		<td class="number">300</td>
-		<td class="number">56</td>
+		<td class="number">{{this.config.getRev("HW", this.calclevel).toFixed(0)}}</td>
 		<td class="number">-150</td>
 		<td class="number">-267%</td>
 	</tr>
 	<tr>
 		<td class="grey">XW</td>
 		<td class="number">300</td>
-		<td class="number">25</td>
+		<td class="number">{{this.config.getRev("XW", this.calclevel).toFixed(0)}}</td>
 		<td class="number">5</td>
 		<td class="number">20%</td>
 	</tr>
 	<tr>
 		<td class="grey">SU</td>
 		<td class="number">2,129</td>
-		<td class="number">132</td>
+		<td class="number">{{this.config.getRev("SU", this.calclevel).toFixed(0)}}</td>
 		<td class="number">103</td>
 		<td class="number">78%</td>
 	</tr>
 	<tr>
 		<td class="grey">PC</td>
 		<td class="number">0</td>
-		<td class="number">0</td>
+		<td class="number">{{this.config.getRev("PC", this.calclevel).toFixed(0)}}</td>
 		<td class="number">0</td>
 		<td class="number">0%</td>
 	</tr>
 	<tr>
 		<td class="total" colspan="2">Total</td>
-		<td class="number total">214</td>
+		<td class="number total">{{(+this.config.getRev("HW", this.calclevel).toFixed(0) + +this.config.getRev("XW", this.calclevel).toFixed(0) + +this.config.getRev("SU", this.calclevel).toFixed(0) + +this.config.getRev("PC", this.calclevel).toFixed(0)).toFixed(0)}}</td>
 		<td class="number total">-42</td>
 		<td class="number total">-20%</td>
 	</tr>

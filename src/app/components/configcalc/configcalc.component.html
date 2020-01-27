@@ -5,11 +5,11 @@
 	</ng-container>
 	<ng-container matColumnDef="aur">
 		<th mat-header-cell *matHeaderCellDef> AUR</th>
-		<td mat-cell *matCellDef="let config" class="number"> {{getAur(config).toFixed(2)}} </td>
+		<td mat-cell *matCellDef="let config" class="number"> {{config.getAur(this.calclevel).toFixed(2)}} </td>
 	</ng-container>
 	<ng-container matColumnDef="gppct">
 		<th mat-header-cell *matHeaderCellDef style="padding-right: 3px;"> GP %</th>
-		<td mat-cell *matCellDef="let config" class="number" style="padding-right: 3px;"> {{getGP(config).toFixed(0)}}% </td>
+		<td mat-cell *matCellDef="let config" class="number" style="padding-right: 3px;"> {{config.getGP(this.calclevel).toFixed(0)}}% </td>
 	</ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
@@ -25,7 +25,7 @@
   </tr>  <tr>
     <td style="border: 1px solid black;">-1,959
     </td>
-    <td style="border: 1px solid black;">4,160
+    <td style="border: 1px solid black;">{{(+this.config.getRev("HW", this.calclevel).toFixed(0) + +this.config.getRev("XW", this.calclevel).toFixed(0) + +this.config.getRev("SU", this.calclevel).toFixed(0) + +this.config.getRev("PC", this.calclevel).toFixed(0)).toFixed(0)}}
     </td>
     <td style="border: 1px solid black;">-20%
     </td>

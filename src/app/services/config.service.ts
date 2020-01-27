@@ -1,59 +1,66 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { LineItem } from "../models/lineitem";
+import { ConfigLineItem } from "../businessobjects/configlineitem";
+import { CoreService } from "./core.service";
 
 @Injectable({
   providedIn: "root"
 })
 export class ConfigService {
-  list: LineItem[] = [
-    {
-      configId: 1,
-      name: "CS521dn Printer High Volt BENELUX ACE DZ BA BG HR EE FR EG GR DE IT LT LV MA PL RO RU RS SI TR",
-      partNumber: "42C0070",
-      quantity: 300,
-      materialLine: "HW",
-      cost: 516.29,
-      flod: 321.54,
-      pabp: 165,
-      geo: 165,
-      country: 160,
-      competitor: 165,
-      director: 165
-    },
-    {
-      configId: 1,
-      name: "550-Sheet Duo Tray with 100-Sheet Feeder",
-      partNumber: "42C7650",
-      quantity: 300,
-      materialLine: "HW",
-      cost: 40.45,
-      flod: 139.38,
-      pabp: 80,
-      geo: 80,
-      country: 80,
-      competitor: 80,
-      director: 80
-    },
-    {
-      configId: 1,
-      name: "Black CRTG Ultra CORP",
-      partNumber: "78C2UKE",
-      quantity: 1800,
-      materialLine: "SU",
-      cost: 12.55,
-      flod: 110.20,
-      pabp: 42,
-      geo: 50,
-      country: 50,
-      competitor: 50,
-      director: 50
-    }
-  ];
+  list: ConfigLineItem[] = new Array();
 
-  list$: BehaviorSubject<LineItem[]> = new BehaviorSubject(this.list);
+  list$: BehaviorSubject<ConfigLineItem[]> = new BehaviorSubject(this.list);
 
-  constructor() {}
+  constructor(core: CoreService) {
+    let config: ConfigLineItem;
+    config = new ConfigLineItem(core);
+    config.configId = 1;
+    config.name =
+      "CS521dn Printer High Volt BENELUX ACE DZ BA BG HR EE FR EG GR DE IT LT LV MA PL RO RU RS SI TR";
+    config.partNumber = "42C0070";
+    config.quantity = 300;
+    config.materialLine = "HW";
+    config.cost = 516.29;
+    config.flod = 321.54;
+    config.pabp = 165;
+    config.geo = 165;
+    config.country = 160;
+    config.competitor = 165;
+    config.director = 165;
+    this.list.push(config);
+
+     config = new ConfigLineItem(core);
+    config.configId = 1;
+    config.name =
+      "550-Sheet Duo Tray with 100-Sheet Feeder";
+    config.partNumber = "42C7650";
+    config.quantity = 300;
+    config.materialLine = "HW";
+    config.cost = 40.45;
+    config.flod = 139.38;
+    config.pabp = 80;
+    config.geo = 80;
+    config.country = 80;
+    config.competitor = 80;
+    config.director = 80;
+    this.list.push(config);   
+
+         config = new ConfigLineItem(core);
+    config.configId = 1;
+    config.name =
+      "Black CRTG Ultra CORP";
+    config.partNumber = "78C2UKE";
+    config.quantity = 1800;
+    config.materialLine = "SU";
+    config.cost = 12.55;
+    config.flod = 110.20;
+    config.pabp = 42;
+    config.geo = 50;
+    config.country = 50;
+    config.competitor = 50;
+    config.director = 50;
+    this.list.push(config);   
+  }
 
   update(index, field, value) {
     this.list = this.list.map((e, i) => {
@@ -69,4 +76,15 @@ export class ConfigService {
   }
 
   getControl(index, fieldName) {}
+
+  getRev(line: string, calclevel: string): number{
+    let toSum = this.list.filter(item => item.materialLine === line);
+    let sumQuantity: number = 0;
+
+    for (let i = 0; i < toSum.length; i++){
+      sumQuantity += toSum[i].quantity * Math.round(toSum[i].getAur(calclevel));
+    }
+
+    return sumQuantity/1000;
+  }
 }

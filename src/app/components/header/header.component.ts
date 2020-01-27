@@ -9,9 +9,12 @@ import {CoreService} from "../../services/core.service"
 })
 export class HeaderComponent implements OnInit {
   constructor(private core: CoreService) { }
-
+  isShowDetail: boolean = false;
   ngOnInit() {
     
   }
 
+  toggleDetail(){
+    this.isShowDetail = !this.isShowDetail;
+  }
 }

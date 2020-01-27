@@ -48,25 +48,25 @@
 			<app-targetdetail></app-targetdetail>
 		</td>
 		<td *ngIf="this.state.master">
-			<app-targetcalc></app-targetcalc>
+			<app-targetcalc calclevel="master"></app-targetcalc>
 		</td>
 		<td *ngIf="this.state.bsd">
-			<app-targetcalc></app-targetcalc>
+			<app-targetcalc calclevel="bsd"></app-targetcalc>
 		</td>
 		<td *ngIf="this.state.previously">
-			<app-targetcalc></app-targetcalc>
+			<app-targetcalc calclevel="previously"></app-targetcalc>
 		</td>
 		<td *ngIf="this.state.country">
-			<app-targetcalc></app-targetcalc>
+			<app-targetcalc calclevel="country"></app-targetcalc>
 		</td>
 		<td *ngIf="this.state.geo">
-			<app-targetcalc></app-targetcalc>
+			<app-targetcalc calclevel="geo"></app-targetcalc>
 		</td>
 		<td *ngIf="this.state.competitor">
-			<app-targetcalc></app-targetcalc>
+			<app-targetcalc calclevel="competitor"></app-targetcalc>
 		</td>
 		<td *ngIf="this.state.director">
-			<app-targetcalc></app-targetcalc>
+			<app-targetcalc calclevel="director"></app-targetcalc>
 		</td>
 	</tr>
 </table>
